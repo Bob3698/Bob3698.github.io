@@ -6,9 +6,17 @@
         
             
         </style>
+        <script>
+            function banner(){ 
+            var text = confirm("Did You Really Want to Click on My Banner?"); 
+            return text; 
+            }
+        </script>
     </head>
     <body>
+        <a href="https://www.google.com/" onclick="return banner()">
         <header>hello</header>
+        </a>
         <nav>
          <ul id="navmenu">
              <li class="navitem"> <a href="Coming soon.html">page 2</a> </li>
