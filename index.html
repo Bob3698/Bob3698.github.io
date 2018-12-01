@@ -11,6 +11,23 @@
             var text = confirm("Did You Really Want to Click on My Banner?"); 
             return text; 
             }
+            function answer(){
+                var radio = document.getElementsByName("trivia"); 
+                var selection = false; 
+                var message = "";
+                for( var i = 0; i < radio.length; i++) { 
+                if(radio[i].value == "yes" && radio[i].checked == true) { 
+                selection = true; 
+                } //end if statement 
+              } //end for loop
+                if(selection == true) {
+                message = message + "<b><p style='color:green'>Way to go!</p></b>";
+                } else { 
+                message = message + "<b><p style='color:red'>Try again my friend.</p></b>"; 
+                }
+                document.getElementById("response").innerHTML = message;
+
+            } //end function answer
         </script>
     </head>
     <body>
@@ -42,11 +59,13 @@
     
             <p class="paragraph"> Are pandas <span class="wrap-text">omnivores</span> or not? </p>
         <form>
+            <div id="response"></div>
             <input type="radio" name="trivia" value="yes">                  yes <br>
             <input type="radio" name="trivia" value="no"> no                <br>
             <input type="radio" name="trivia" value="maybe">                maybe <br>
             <input type="radio" name="trivia" value="Idk">                  Idk <br>
             <input type="button" value="submit" id="button">
+            onlick="answer()"
         </form>
         </div>
         <iframe width="420" height="315"
